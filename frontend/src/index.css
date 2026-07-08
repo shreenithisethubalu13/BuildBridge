@@ -1,0 +1,308 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background:#eef5fb;
+    color:#1f2937;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    cursor:pointer;
+    transition:.25s;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    height:80px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-box{
+    width:55px;
+    height:55px;
+    border-radius:16px;
+    background:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:white;
+}
+
+.logo-text h2{
+    color:#2563eb;
+    font-size:23px;
+}
+
+.logo-text span{
+    font-size:13px;
+    color:#777;
+}
+
+.navbar-search{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.navbar-search input{
+
+    width:430px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    outline:none;
+
+    background:#f4f7fc;
+
+    border-radius:40px;
+
+    font-size:15px;
+
+    box-shadow:inset 0 0 5px rgba(0,0,0,.05);
+
+}
+
+.navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.circle-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.08);
+
+    font-size:20px;
+
+}
+
+.circle-btn:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+.user-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    padding:8px 15px;
+
+    border-radius:18px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.08);
+
+}
+
+.avatar{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+.user-box h4{
+
+    font-size:15px;
+
+}
+
+.user-box small{
+
+    color:#777;
+
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
+.page{
+
+    padding:35px;
+
+}
+
+.page-title{
+
+    font-size:30px;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.page-subtitle{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+LAYOUT
+=========================== */
+
+.layout{
+
+display:flex;
+
+min-height:calc(100vh - 80px);
+
+}
+
+.sidebar{
+
+width:260px;
+
+background:white;
+
+padding:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+box-shadow:8px 0 25px rgba(0,0,0,.05);
+
+}
+
+.sidebar a{
+
+padding:15px;
+
+border-radius:12px;
+
+font-size:16px;
+
+font-weight:600;
+
+color:#444;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#2563eb;
+
+color:white;
+
+transform:translateX(6px);
+
+}
+
+.content{
+
+flex:1;
+
+padding:35px;
+
+overflow-y:auto;
+
+background:#eef5fb;
+
+min-height:calc(100vh - 80px);
+
+}
