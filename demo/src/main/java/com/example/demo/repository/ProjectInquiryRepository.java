@@ -15,4 +15,5 @@ public interface ProjectInquiryRepository extends JpaRepository<ProjectInquiry, 
 
     List<ProjectInquiry> findByStatus(InquiryStatus status);
 
+    long countByStatus(InquiryStatus status);
 }

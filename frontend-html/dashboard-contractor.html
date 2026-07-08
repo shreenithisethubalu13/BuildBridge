@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BuildBridge | Contractor Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+             <i class="fa-solid fa-building"></i><br>
+             <span>BuildBridge</span>
+        </div>>
+
+        <div class="menu">
+            
+            <a href="dashboard-contractor.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+            
+            <a href="#projectContainer">
+                <i class="fa-solid fa-building"></i>
+                Assigned Projects
+            </a>
+            
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-column"></i>
+                Reports
+            </a>
+        </div>
+
+<hr class="text-secondary my-4">
+
+<div class="text-center text-light small">
+    Contractor Portal
+</div>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="topbar">
+            
+            <div>
+                <h3 class="fw-bold mb-1">
+                    Welcome Back 👷
+                </h3>
+                
+                <p class="text-muted mb-0">
+                    Manage your assigned construction projects efficiently.
+                </p>
+            
+            </div>
+
+             <div class="user">
+                
+                <span class="badge bg-success p-2">
+                    
+                    <i class="fa-solid fa-user-hard-hat"></i>
+                    
+                    <span id="usernameDisplay"></span>
+
+                </span>
+                
+                <button
+                id="logoutBtn"
+                class="btn btn-danger ms-3">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                
+                Logout
+            
+            </button>
+        
+        </div>
+
+</div>
+
+        <!-- Dashboard Cards -->
+
+        <div class="cards">
+
+    <div class="card-box">
+
+        <i class="fa-solid fa-building fa-2x text-success mb-3"></i>
+
+        <h4>Assigned Projects</h4>
+
+        <p>
+            View and manage your assigned projects.
+        </p>
+
+        <hr>
+
+        <small class="text-muted">
+            All active construction works.
+        </small>
+
+        <br><br>
+
+        <a
+            href="#projectContainer"
+            class="btn btn-success">
+
+            View Projects
+
+        </a>
+
+    </div>
+
+    <div class="card-box">
+
+        <i class="fa-solid fa-list-check fa-2x text-primary mb-3"></i>
+
+        <h4>Work Progress</h4>
+
+        <p>
+            Monitor project completion status.
+        </p>
+
+        <hr>
+
+        <small class="text-muted">
+            Keep track of assigned tasks.
+        </small>
+
+        <br><br>
+
+        <a
+            href="#projectContainer"
+            class="btn btn-primary">
+
+            Open
+
+        </a>
+
+    </div>
+
+    <div class="card-box">
+
+        <i class="fa-solid fa-chart-line fa-2x text-warning mb-3"></i>
+
+        <h4>Reports</h4>
+
+        <p>
+            View project reports and updates.
+        </p>
+
+        <hr>
+
+        <small class="text-muted">
+            Generate construction reports.
+        </small>
+
+        <br><br>
+
+        <a
+            href="reports.html"
+            class="btn btn-warning">
+
+            View Reports
+
+        </a>
+
+    </div>
+
+</div>
+
+        <!-- Assigned Projects -->
+
+        <h3 class="section-title">
+
+    <i class="fa-solid fa-building text-success"></i>
+
+    Assigned Projects
+
+</h3>
+
+        <div
+            id="projectContainer"
+            class="project-grid">
+
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-5 text-muted">
+
+    <hr>
+
+    <small>
+        © 2026 BuildBridge | Contractor Dashboard
+    </small>
+
+</footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboardContractor.js"></script>
+
+</body>
+
+</html>
