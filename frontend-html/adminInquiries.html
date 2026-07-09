@@ -6,48 +6,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project Inquiries</title>
+    <title>BuildBridge | Project Inquiries</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
 </head>
 
-<body class="bg-light">
+<body>
 
-<div class="menu">
+    <!-- Sidebar -->
 
-    <a href="dashboard-admin.html">
-        Dashboard
-    </a>
+    <div class="sidebar">
 
-    <a href="adminInquiries.html" class="active">
-        Project Inquiries
-    </a>
+        <div class="logo">
+            <i class="fa-solid fa-building"></i><br>
+            <span>BuildBridge</span>
+        </div>
 
-    <a href="adminUsers.html">
-        Users
-    </a>
+        <div class="menu">
 
-    <a href="reports.html">
-        Reports
-    </a>
+            <a href="dashboard-admin.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
 
-</div>
+            <a href="adminInquiries.html" class="active">
+                <i class="fa-solid fa-folder-open"></i>
+                Project Inquiries
+            </a>
 
-<div class="container mt-5">
+            <a href="adminUsers.html">
+                <i class="fa-solid fa-users"></i>
+                Users
+            </a>
 
-    <h2 class="mb-4">
-        Project Inquiries
-    </h2>
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                Reports
+            </a>
 
-    <div class="row g-4" id="inquiryContainer">
+        </div>
 
     </div>
 
-</div>
+    <!-- Main Content -->
 
-<script src="js/api.js"></script>
-<script src="js/adminInquiries.js"></script>
+    <div class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <div>
+                <h3 class="fw-bold mb-1">
+                    Project Inquiries
+                </h3>
+
+                <p class="text-muted mb-0">
+                    View and manage all project requests submitted by clients.
+                </p>
+            </div>
+
+            <div>
+
+                <a href="dashboard-admin.html" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Project Cards -->
+
+        <h3 class="section-title">
+            <i class="fa-solid fa-list-check text-primary"></i>
+            All Project Inquiries
+        </h3>
+
+        <div class="project-grid" id="inquiryContainer">
+
+        </div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/adminInquiries.js"></script>
+
+    <footer>
+    <hr>
+    <small>© 2026 BuildBridge | Construction Management System</small>
+</footer>
 
 </body>
+
 </html>

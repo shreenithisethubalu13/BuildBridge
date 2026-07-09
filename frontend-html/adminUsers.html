@@ -6,73 +6,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manage Users</title>
+    <title>BuildBridge | Manage Users</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
 </head>
 
-<body class="bg-light">
+<body>
 
-<nav class="navbar navbar-dark bg-dark">
+    <!-- Sidebar -->
 
-    <div class="container-fluid">
+    <div class="sidebar">
 
-        <span class="navbar-brand">
-            👥 BuildBridge - Manage Users
-        </span>
+        <div class="logo">
+            <i class="fa-solid fa-building"></i><br>
+            <span>BuildBridge</span>
+        </div>
 
-        <button class="btn btn-danger" onclick="logout()">
-            Logout
-        </button>
+        <div class="menu">
 
-    </div>
+            <a href="dashboard-admin.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
 
-</nav>
+            <a href="adminInquiries.html">
+                <i class="fa-solid fa-folder-open"></i>
+                Project Inquiries
+            </a>
 
-<div class="container mt-4">
+            <a href="adminUsers.html" class="active">
+                <i class="fa-solid fa-users"></i>
+                Users
+            </a>
 
-    <div class="row mb-3">
-
-        <div class="col-md-4">
-
-            <input
-                type="text"
-                id="searchUser"
-                class="form-control"
-                placeholder="Search Username..."
-                onkeyup="searchUsers()">
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                Reports
+            </a>
 
         </div>
 
     </div>
 
-    <table class="table table-bordered table-hover shadow">
+    <!-- Main -->
 
-        <thead class="table-dark">
+    <div class="main">
 
-        <tr>
+        <!-- Topbar -->
 
-            <th>ID</th>
-            <th>Full Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
+        <div class="topbar">
 
-        </tr>
+            <div>
 
-        </thead>
+                <h3 class="fw-bold mb-1">
+                    Manage Users
+                </h3>
 
-        <tbody id="userTable">
+                <p class="text-muted mb-0">
+                    View and manage all BuildBridge users.
+                </p>
 
-        </tbody>
+            </div>
 
-    </table>
+            <button class="btn btn-danger" onclick="logout()">
 
-</div>
+                <i class="fa-solid fa-right-from-bracket"></i>
 
-<script src="js/adminUsers.js"></script>
+                Logout
+
+            </button>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="card p-3 shadow-sm mb-4">
+
+            <div class="row">
+
+                <div class="col-md-5">
+
+                    <input
+                        type="text"
+                        id="searchUser"
+                        class="form-control"
+                        placeholder="🔍 Search Username..."
+                        onkeyup="searchUsers()">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Users Table -->
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="userTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/adminUsers.js"></script>
+
+    <footer>
+    <hr>
+    <small>© 2026 BuildBridge | Construction Management System</small>
+</footer>
 
 </body>
+
 </html>

@@ -3,158 +3,164 @@ const API = "http://localhost:8080/api";
 let contractors = [];
 
 window.onload = async () => {
-
     await loadContractors();
-
     await loadInquiries();
-
 };
 
+// Load all contractors
 async function loadContractors() {
-
-    const response = await fetch(`${API}/inquiries/contractors`);
-
-    contractors = await response.json();
-
+    try {
+        const response = await fetch(`${API}/inquiries/contractors`);
+        contractors = await response.json();
+    } catch (error) {
+        console.error("Error loading contractors:", error);
+    }
 }
 
+// Load all inquiries
 async function loadInquiries() {
 
-    const response = await fetch(`${API}/inquiries`);
+    try {
 
-    const inquiries = await response.json();
+        const response = await fetch(`${API}/inquiries`);
+        const inquiries = await response.json();
 
-    const container = document.getElementById("inquiryContainer");
+        const container = document.getElementById("inquiryContainer");
+        container.innerHTML = "";
 
-    container.innerHTML = "";
+        if (inquiries.length === 0) {
+            container.innerHTML = `
+                <div class="alert alert-info">
+                    No Project Inquiries Found.
+                </div>
+            `;
+            return;
+        }
 
-    inquiries.forEach(project => {
+        inquiries.forEach(project => {
 
-        let options = "";
+            let options = "";
 
-        contractors.forEach(c => {
+            contractors.forEach(c => {
+                options += `
+                    <option value="${c.id}">
+                        ${c.fullName}
+                    </option>
+                `;
+            });
 
-            options += `
+            container.innerHTML += `
+                <div class="project-card">
 
-            <option value="${c.id}">
+                    <div class="project-body">
 
-                ${c.fullName}
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4>${project.siteName}</h4>
 
-            </option>
+                            <span class="badge bg-primary">
+                                ${project.status}
+                            </span>
+                        </div>
 
+                        <p>
+                            <i class="fa-solid fa-user text-primary"></i>
+                            <strong> Client:</strong>
+                            ${project.client.fullName}
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot text-danger"></i>
+                            <strong> Location:</strong>
+                            ${project.location}
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-building text-success"></i>
+                            <strong> Project:</strong>
+                            ${project.projectType}
+                        </p>
+
+                        <div class="mt-3">
+                            <label class="form-label fw-semibold">
+                                Assign Contractor
+                            </label>
+
+                            <select
+                                id="contractor-${project.id}"
+                                class="form-select">
+
+                                ${options}
+
+                            </select>
+                        </div>
+
+                        <button
+                            class="btn btn-primary w-100 mt-3"
+                            onclick="assign(${project.id})">
+
+                            <i class="fa-solid fa-user-check"></i>
+                            Assign Contractor
+
+                        </button>
+
+                        <a
+                            href="project-details.html?id=${project.id}"
+                            class="btn btn-success w-100 mt-2">
+
+                            <i class="fa-solid fa-eye"></i>
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
             `;
 
         });
 
-        container.innerHTML += `
+    } catch (error) {
 
-        <div class="col-md-4">
+        console.error("Error loading inquiries:", error);
 
-            <div class="card shadow">
-
-                <div class="card-body">
-
-                    <h4>${project.siteName}</h4>
-
-                    <hr>
-
-                    <p><strong>Client:</strong>
-                    ${project.client.fullName}</p>
-
-                    <p><strong>Location:</strong>
-                    ${project.location}</p>
-
-                    <p><strong>Status:</strong>
-                    ${project.status}</p>
-
-                    <select
-
-                        id="contractor-${project.id}"
-
-                        class="form-select">
-
-                        ${options}
-
-                    </select>
-
-                    <button
-
-                        class="btn btn-primary mt-3 w-100"
-
-                        onclick="assign(${project.id})">
-
-                        Assign Contractor
-
-                    </button>
-
-                    <a
-
-                    href="project-details.html?id=${project.id}"
-
-                    class="btn btn-success mt-2 w-100">
-
-                    View Details
-
-                    </a>
-
-                </div>
-
+        document.getElementById("inquiryContainer").innerHTML = `
+            <div class="alert alert-danger">
+                Unable to load project inquiries.
             </div>
-
-        </div>
-
         `;
-
-    });
+    }
 
 }
 
-async function assign(id){
+// Assign contractor
+async function assign(id) {
 
-    const contractorId =
+    const contractorId = document.getElementById(`contractor-${id}`).value;
 
-    document.getElementById(
+    try {
 
-        `contractor-${id}`
+        const response = await fetch(
+            `${API}/inquiries/${id}/assign`,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contractorId: contractorId
+                })
+            }
+        );
 
-    ).value;
-
-    const response = await fetch(
-
-        `${API}/inquiries/${id}/assign`,
-
-        {
-
-            method:"PUT",
-
-            headers:{
-
-                "Content-Type":"application/json"
-
-            },
-
-            body:JSON.stringify({
-
-                contractorId:contractorId
-
-            })
-
+        if (response.ok) {
+            alert("✅ Contractor Assigned Successfully");
+            await loadInquiries();
+        } else {
+            alert("❌ Assignment Failed");
         }
 
-    );
-
-    if(response.ok){
-
-        alert("Contractor Assigned Successfully");
-
-        loadInquiries();
-
+    } catch (error) {
+        console.error(error);
+        alert("❌ Server Error");
     }
-
-    else{
-
-        alert("Assignment Failed");
-
-    }
-
 }

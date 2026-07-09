@@ -7,4 +7,4 @@ public enum InquiryStatus {
     PLANNING,
     ACTIVE,
     COMPLETED
-}
+}   

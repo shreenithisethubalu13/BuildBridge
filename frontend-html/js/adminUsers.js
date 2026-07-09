@@ -4,73 +4,118 @@ let users = [];
 
 window.onload = loadUsers;
 
+// Load Users
 async function loadUsers() {
 
     try {
 
         const response = await fetch(API_URL);
 
+        if (!response.ok) {
+            throw new Error("Failed to load users");
+        }
+
         users = await response.json();
 
         displayUsers(users);
 
-    }
-
-    catch(error){
+    } catch (error) {
 
         console.error(error);
 
-        alert("Unable to load users.");
-
+        document.getElementById("userTable").innerHTML = `
+            <tr>
+                <td colspan="6" class="text-center text-danger">
+                    Unable to load users.
+                </td>
+            </tr>
+        `;
     }
-
 }
 
-function displayUsers(list){
+// Display Users
+function displayUsers(list) {
 
     const table = document.getElementById("userTable");
 
     table.innerHTML = "";
 
-    list.forEach(user=>{
+    if (list.length === 0) {
 
-        table.innerHTML += `
-
-        <tr>
-
-            <td>${user.id}</td>
-
-            <td>${user.fullName}</td>
-
-            <td>${user.username}</td>
-
-            <td>${user.email}</td>
-
-            <td>${user.role}</td>
-
-            <td>
-
-                <button
-
-                class="btn btn-danger btn-sm"
-
-                onclick="deleteUser(${user.id})">
-
-                Delete
-
-                </button>
-
-            </td>
-
-        </tr>
-
+        table.innerHTML = `
+            <tr>
+                <td colspan="6" class="text-center">
+                    No Users Found
+                </td>
+            </tr>
         `;
 
-    });
+        return;
+    }
 
+    list.forEach(user => {
+
+        let badgeClass = "bg-secondary";
+
+        switch (user.role) {
+
+            case "ADMIN":
+                badgeClass = "bg-danger";
+                break;
+
+            case "CLIENT":
+                badgeClass = "bg-primary";
+                break;
+
+            case "CONTRACTOR":
+                badgeClass = "bg-success";
+                break;
+
+            case "SUPERVISOR":
+                badgeClass = "bg-warning text-dark";
+                break;
+        }
+
+        table.innerHTML += `
+            <tr>
+
+                <td>${user.id}</td>
+
+                <td>
+                    <i class="fa-solid fa-user text-primary"></i>
+                    ${user.fullName}
+                </td>
+
+                <td>${user.username}</td>
+
+                <td>${user.email}</td>
+
+                <td>
+                    <span class="badge ${badgeClass}">
+                        ${user.role}
+                    </span>
+                </td>
+
+                <td>
+
+                    <button
+                        class="btn btn-danger btn-sm"
+                        onclick="deleteUser(${user.id})">
+
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+        `;
+    });
 }
 
-function searchUsers(){
+// Search
+function searchUsers() {
 
     const text = document
         .getElementById("searchUser")
@@ -81,50 +126,54 @@ function searchUsers(){
 
         user.username.toLowerCase().includes(text) ||
 
-        user.fullName.toLowerCase().includes(text)
+        user.fullName.toLowerCase().includes(text) ||
+
+        user.role.toLowerCase().includes(text)
 
     );
 
     displayUsers(filtered);
-
 }
 
-async function deleteUser(id){
+// Delete User
+async function deleteUser(id) {
 
-    if(!confirm("Delete this user?")) return;
+    if (!confirm("Are you sure you want to delete this user?")) {
+        return;
+    }
 
-    const response = await fetch(
+    try {
 
-        `${API_URL}/${id}`,
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE"
+        });
 
-        {
+        if (response.ok) {
 
-            method:"DELETE"
+            alert("✅ User Deleted Successfully");
+
+            loadUsers();
+
+        } else {
+
+            alert("❌ Delete Failed");
 
         }
 
-    );
+    } catch (error) {
 
-    if(response.ok){
+        console.error(error);
 
-        alert("User Deleted");
-
-        loadUsers();
+        alert("❌ Server Error");
 
     }
-
-    else{
-
-        alert("Delete Failed");
-
-    }
-
 }
 
-function logout(){
+// Logout
+function logout() {
 
     localStorage.clear();
 
-    window.location.href="login.html";
+    window.location.href = "login.html";
 
 }

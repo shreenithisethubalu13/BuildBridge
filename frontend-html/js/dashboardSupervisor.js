@@ -61,15 +61,12 @@ async function loadProjects() {
                         <select
                         class="form-select"
                         id="status-${project.id}">
-
-                            <option value="PENDING">PENDING</option>
-
-                            <option value="ASSIGNED">ASSIGNED</option>
-
-                            <option value="IN_PROGRESS">IN_PROGRESS</option>
-
-                            <option value="COMPLETED">COMPLETED</option>
-
+                        <option value="PENDING">PENDING</option>
+                        <option value="ASSIGNED">ASSIGNED</option>
+                        <option value="PLANNING">PLANNING</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="COMPLETED">COMPLETED</option>
+                        <option value="REJECTED">REJECTED</option>
                         </select>
 
                         <button

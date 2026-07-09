@@ -411,3 +411,63 @@ table tbody tr:hover{
     align-items:center;
     gap:10px;
 }
+
+/* ---------- Cards ---------- */
+
+.card,
+.card-box,
+.project-card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    background:#fff;
+}
+
+.card:hover,
+.card-box:hover,
+.project-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn{
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* ---------- Table ---------- */
+
+.table{
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.table thead{
+    background:#0d6efd;
+    color:#fff;
+}
+
+/* ---------- Badges ---------- */
+
+.badge{
+    padding:8px 14px;
+    font-size:14px;
+    border-radius:20px;
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    color:#777;
+    padding:20px;
+}
