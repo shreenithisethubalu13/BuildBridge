@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BuildBridge Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid vh-100">
+
+    <div class="row h-100">
+
+        <!-- LEFT -->
+
+        <div class="col-lg-7 d-none d-lg-flex login-left">
+
+            <div>
+
+                <h1>🏗 BuildBridge</h1>
+
+                <h3>Construction Management Platform</h3>
+
+                <p>
+
+                    Manage Projects, Contractors,
+
+                    Tasks & Reports in one place.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="col-lg-5 col-md-12 login-right">
+
+            <div class="login-card">
+
+                <h2 class="mb-4">
+
+                    Login
+
+                </h2>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Username
+
+                    </label>
+
+                    <input
+                            id="username"
+                            class="form-control"
+                            type="text">
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Password
+
+                    </label>
+
+                    <input
+                            id="password"
+                            class="form-control"
+                            type="password">
+
+                </div>
+
+                <button
+                        id="loginBtn"
+                        class="btn btn-primary w-100">
+
+                    Login
+
+                </button>
+
+                <hr>
+
+                <p class="text-center">
+                    New to BuildBridge?
+                    <a href="register.html">
+                        Create Account
+                    </a>
+                </p>
+
+                <div
+                        id="message"
+                        class="mt-3 text-danger">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/login.js"></script>
+
+<footer>
+    <hr>
+    <small>© 2026 BuildBridge | Construction Management System</small>
+</footer>
+</body>
+
+</html>

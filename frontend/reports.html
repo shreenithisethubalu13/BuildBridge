@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BuildBridge | Reports</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-building"></i><br>
+            <span>BuildBridge</span>
+        </div>
+
+        <div class="menu">
+
+            <a href="dashboard-admin.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="adminInquiries.html">
+                <i class="fa-solid fa-folder-open"></i>
+                Project Inquiries
+            </a>
+
+            <a href="adminUsers.html">
+                <i class="fa-solid fa-users"></i>
+                Users
+            </a>
+
+            <a href="reports.html" class="active">
+                <i class="fa-solid fa-chart-pie"></i>
+                Reports
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h3 class="fw-bold mb-1">
+                    Reports Dashboard
+                </h3>
+
+                <p class="text-muted mb-0">
+                    Overview of all BuildBridge projects.
+                </p>
+
+            </div>
+
+            <button
+                class="btn btn-danger"
+                onclick="window.location.href='dashboard-admin.html'">
+
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+
+            </button>
+
+        </div>
+
+        <!-- Report Cards -->
+
+        <div class="cards">
+
+            <div class="card-box">
+
+                <i class="fa-solid fa-building fa-2x text-primary mb-3"></i>
+
+                <h2 id="total">0</h2>
+
+                <p>Total Projects</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <i class="fa-solid fa-clock fa-2x text-warning mb-3"></i>
+
+                <h2 id="pending">0</h2>
+
+                <p>Pending Projects</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <i class="fa-solid fa-user-check fa-2x text-info mb-3"></i>
+
+                <h2 id="assigned">0</h2>
+
+                <p>Assigned Projects</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <i class="fa-solid fa-circle-check fa-2x text-success mb-3"></i>
+
+                <h2 id="completed">0</h2>
+
+                <p>Completed Projects</p>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white">
+                Project Status Overview
+            </div>
+
+            <div class="card-body">
+                <canvas id="projectChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="js/reports.js"></script>
+
+    <footer>
+    <hr>
+    <small>© 2026 BuildBridge | Construction Management System</small>
+</footer>
+
+</body>
+
+</html>
