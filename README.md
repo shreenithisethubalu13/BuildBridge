@@ -1,176 +1,264 @@
 # 🏗️ BuildBridge
 
-> A Full-Stack Construction Site & Contractor Workflow Management System built using Spring Boot, MySQL, HTML, CSS, Bootstrap, JavaScript, and REST APIs.
+> **A Full-Stack Construction Site & Contractor Workflow Management System** built using **Spring Boot, Spring Security, JWT, MySQL, HTML, CSS, Bootstrap, JavaScript, and REST APIs.**
 
 ---
 
-## 📖 Project Overview
+# 📖 Project Overview
 
-BuildBridge is a web-based Construction Site & Contractor Workflow Management System designed to simplify and digitize construction project management. It provides a centralized platform for managing contractors, supervisors, project tasks, daily work logs, and customer inquiries while ensuring smooth communication between stakeholders.
+BuildBridge is a web-based **Construction Site & Contractor Workflow Management System** designed to simplify and digitize construction project management.
 
-The application follows a layered architecture using Spring Boot and REST APIs for the backend, MySQL for data persistence, and HTML, CSS, Bootstrap, and JavaScript for the frontend. It is designed with scalability, maintainability, and real-world project workflows in mind.
+The system provides a centralized platform where administrators, supervisors, contractors, and clients can collaborate efficiently. It enables secure authentication, project monitoring, contractor assignment, inquiry management, daily work logging, and role-based access through a scalable full-stack architecture.
 
----
-## ❓ Problem Statement
-
-Construction projects involve multiple stakeholders, including clients, supervisors, and contractors. Managing project information manually through paperwork, spreadsheets, or scattered communication often leads to delays, miscommunication, inefficient task tracking, and difficulty monitoring daily progress.
-
-Existing manual workflows make it challenging to:
-- Track construction tasks efficiently.
-- Assign contractors to projects.
-- Record daily work logs.
-- Handle customer inquiries.
-- Monitor project progress in a centralized system.
-
-A digital solution is required to streamline these operations and improve collaboration among all stakeholders.
+The backend is developed using **Spring Boot** with **REST APIs**, while the frontend is built using **HTML, CSS, Bootstrap, and JavaScript**. Data is securely stored in **MySQL** using **Spring Data JPA**.
 
 ---
 
-## 💡 Solution
+# ❓ Problem Statement
 
-BuildBridge provides a centralized web-based platform that digitizes construction project management by integrating task management, contractor assignments, work log tracking, inquiry management, and role-based access into a single application.
+Managing construction projects manually often leads to:
 
-The system enables supervisors and contractors to collaborate efficiently while maintaining organized project records through a secure and scalable full-stack architecture.
+- Poor communication between stakeholders
+- Difficulty tracking construction tasks
+- Inefficient contractor assignment
+- Lack of centralized project information
+- Delays in monitoring work progress
+- Difficulty handling customer inquiries
+- Manual maintenance of work logs
 
----
-## ✨ Features
-
-### 🔐 Authentication & Authorization
-- Secure user registration and login.
-- Role-based access for different users.
-- JWT-based authentication for protected API access.
-
-### 👷 Contractor Management
-- Register and manage contractor details.
-- Assign contractors to construction projects.
-- Track contractor assignments and status.
-
-### 🏗️ Construction Task Management
-- Create, update, and delete construction tasks.
-- Assign priorities and statuses to tasks.
-- Monitor project progress efficiently.
-
-### 📋 Daily Work Log Management
-- Record daily construction activities.
-- Maintain work history for better project tracking.
-- Improve transparency between supervisors and contractors.
-
-### 📨 Inquiry Management
-- Allow clients to submit project-related inquiries.
-- Track inquiry status.
-- Respond and manage customer communication effectively.
-
-### 👨‍💼 Supervisor Dashboard
-- View and monitor assigned projects.
-- Manage contractor assignments.
-- Track overall project progress.
-
-### 🌐 RESTful APIs
-- Well-structured REST APIs following Spring Boot best practices.
-- Tested using Postman for reliable backend communication.
-
-### 💾 Database Integration
-- Store project, contractor, inquiry, and task information securely using MySQL.
-- Efficient data retrieval using Spring Data JPA.
+A digital platform is required to streamline these operations and improve collaboration across all stakeholders.
 
 ---
+
+# 💡 Solution
+
+BuildBridge provides a centralized platform that enables:
+
+- Secure role-based login
+- Contractor assignment
+- Construction task management
+- Daily work log tracking
+- Customer inquiry management
+- Supervisor monitoring dashboard
+- REST API communication
+- Centralized project information
+
+The system improves productivity, transparency, and project monitoring while reducing manual work.
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication & Authorization
+
+- Secure Login & Registration
+- JWT Authentication
+- Spring Security Integration
+- Role-Based Access Control
+
+---
+
+## 👨‍💼 Admin Module
+
+- Manage Users
+- View Project Information
+- Monitor System Activities
+- Handle Customer Inquiries
+
+---
+
+## 👷 Contractor Module
+
+- View Assigned Projects
+- Track Construction Tasks
+- Update Work Progress
+- Submit Daily Work Logs
+
+---
+
+## 👨‍🔧 Supervisor Module
+
+- Assign Contractors
+- Monitor Projects
+- Review Work Logs
+- Track Construction Progress
+
+---
+
+## 👤 Client Module
+
+- View Assigned Projects
+- Submit Inquiries
+- Track Inquiry Status
+
+---
+
+## 🏗️ Construction Task Management
+
+- Create Tasks
+- Update Tasks
+- Delete Tasks
+- Assign Priorities
+- Track Status
+
+---
+
+## 📋 Daily Work Logs
+
+- Record Daily Activities
+- Maintain Work History
+- Improve Transparency
+
+---
+
+## 📨 Inquiry Management
+
+- Raise Project Inquiries
+- Track Inquiry Status
+- Manage Customer Communication
+
+---
+
+## 🌐 REST APIs
+
+- Layered Spring Boot Architecture
+- CRUD Operations
+- JSON Responses
+- Tested using Postman
+
+---
+
+## 💾 Database Integration
+
+- MySQL Database
+- Spring Data JPA
+- Repository Pattern
+- Secure Data Persistence
+
+---
+
 # 🛠️ Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
-| Java | Core programming language used for backend development. |
-| Spring Boot | Developed REST APIs and backend business logic using a layered architecture. |
-| Spring Data JPA | Simplified database operations using repository interfaces. |
-| Spring Security + JWT | Implemented secure authentication and authorization. |
-| MySQL | Stored project, contractor, task, and inquiry data. |
-| HTML5 | Structured the frontend pages. |
-| CSS3 | Styled the user interface. |
-| Bootstrap | Built a responsive and modern UI. |
-| JavaScript | Added dynamic frontend functionality and API integration. |
-| REST APIs | Enabled communication between frontend and backend. |
-| Maven | Managed project dependencies and builds. |
-| Git & GitHub | Version control and project collaboration. |
-| Postman | Tested and verified REST API endpoints. |
+| Java | Backend Development |
+| Spring Boot | REST API Development |
+| Spring Security | Authentication & Authorization |
+| JWT | Secure Token Authentication |
+| Spring Data JPA | Database Operations |
+| MySQL | Database |
+| HTML5 | Frontend Structure |
+| CSS3 | Styling |
+| Bootstrap | Responsive UI |
+| JavaScript | Dynamic Functionality |
+| REST APIs | Frontend-Backend Communication |
+| Maven | Dependency Management |
+| Git | Version Control |
+| GitHub | Project Hosting |
+| Postman | API Testing |
 
 ---
+
 # 📂 Project Structure
 
 ```
 BuildBridge
 │
-├── backend                 # Spring Boot Backend
+├── backend
 │   ├── src
 │   ├── pom.xml
 │   └── ...
 │
-├── frontend                # HTML, CSS, Bootstrap & JavaScript
+├── frontend
+│   ├── css
+│   ├── js
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard-admin.html
+│   ├── dashboard-supervisor.html
+│   ├── dashboard-contractor.html
+│   ├── dashboard-client.html
+│   └── ...
 │
-├── screenshots             # Project screenshots
+├── frontend-react
+│   └── Initial React Prototype
 │
-├── docs                    # Documentation & Architecture
+├── screenshots
 │
 ├── README.md
+│
 └── .gitignore
 ```
 
 ---
+
 # 🏛️ System Architecture
 
 ```
-                 User
-                   │
-                   ▼
+                   User
+                     │
+                     ▼
         HTML • CSS • Bootstrap
-                   │
-             JavaScript
-                   │
-              REST APIs
-                   │
+                     │
+              JavaScript
+                     │
+               REST APIs
+                     │
           Spring Boot Backend
-                   │
-      Service Layer (Business Logic)
-                   │
-         Repository Layer (JPA)
-                   │
-                MySQL Database
+                     │
+        Controller Layer
+                     │
+         Service Layer
+                     │
+      Repository Layer (JPA)
+                     │
+              MySQL Database
 ```
 
-The application follows a layered architecture consisting of the Presentation Layer (Frontend), Controller Layer, Service Layer, Repository Layer, and Database Layer. This architecture improves maintainability, scalability, and separation of concerns.
+The application follows a **Layered Architecture** that separates presentation, business logic, and data access, making the project scalable, maintainable, and easy to extend.
 
 ---
+
 # 🔄 Project Workflow
 
 1. User logs into the application.
-2. Authentication is validated using JWT.
-3. The frontend communicates with the backend through REST APIs.
-4. Spring Boot processes the request.
-5. Business logic is handled in the Service Layer.
-6. Data is stored and retrieved using Spring Data JPA.
-7. MySQL manages persistent project data.
-8. The response is returned to the frontend and displayed to the user.
+2. Spring Security authenticates the user.
+3. JWT Token is generated.
+4. Frontend communicates with REST APIs.
+5. Controllers receive requests.
+6. Services execute business logic.
+7. Repositories interact with MySQL.
+8. Data is returned as JSON.
+9. Frontend displays the response.
 
 ---
+
 # 📈 Current Implementation Status
 
-- ✅ User Authentication
-- ✅ Role-Based Access Control
+- ✅ Secure Authentication
+- ✅ JWT Authorization
+- ✅ Role-Based Access
 - ✅ Contractor Management
-- ✅ Construction Task Management
+- ✅ Supervisor Module
+- ✅ Client Module
+- ✅ Task Management
 - ✅ Inquiry Management
-- ✅ Daily Work Log Management
-- ✅ REST API Integration
-- ✅ Database Integration
+- ✅ Daily Work Logs
+- ✅ REST APIs
+- ✅ MySQL Integration
 - ✅ Responsive Frontend
-- ✅ Git Version Control
 
 ---
+
 # ⚙️ Installation Guide
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/shreenithisethubalu13/BuildBridge.git
 ```
+
+---
 
 ## Backend Setup
 
@@ -178,12 +266,10 @@ git clone https://github.com/shreenithisethubalu13/BuildBridge.git
 cd backend
 ```
 
-Open the backend project in your preferred IDE.
-
-Configure the MySQL database in:
+Configure MySQL credentials inside:
 
 ```
-application.properties
+src/main/resources/application.properties
 ```
 
 Run the Spring Boot application.
@@ -192,9 +278,15 @@ Run the Spring Boot application.
 
 ## Frontend Setup
 
-Open the `frontend` folder.
+Open the **frontend** folder.
 
-Run the HTML files using Live Server (VS Code) or any web browser.
+Run:
+
+```
+login.html
+```
+
+using **Live Server** or any web browser.
 
 ---
 
@@ -202,7 +294,7 @@ Run the HTML files using Live Server (VS Code) or any web browser.
 
 Create a MySQL database.
 
-Update the database credentials inside:
+Update:
 
 ```
 backend/src/main/resources/application.properties
@@ -211,14 +303,16 @@ backend/src/main/resources/application.properties
 Then start the backend server.
 
 ---
+
 # 🔌 REST API Modules
 
-The backend exposes RESTful APIs for the following modules:
+The backend exposes APIs for:
 
 - Authentication
-- Users
-- Contractors
-- Assignments
+- User Management
+- Contractor Management
+- Supervisor Module
+- Assignment Module
 - Construction Tasks
 - Daily Work Logs
 - Project Inquiries
@@ -226,44 +320,125 @@ The backend exposes RESTful APIs for the following modules:
 All APIs were tested using **Postman**.
 
 ---
+
 # 📸 Screenshots
 
-Project screenshots will be added here.
+## 🔐 Login Page
 
-- Login Page
-- Dashboard
-- Contractor Management
-- Construction Tasks
-- Inquiry Management
-- Daily Work Logs
-- Database Tables
-- Postman API Testing
+![Login](screenshots/login-page.png)
 
 ---
+
+## 📝 Register Page
+
+![Register](screenshots/register-page.png)
+
+---
+
+## 👨‍💼 Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+## 👨‍🔧 Supervisor Dashboard
+
+![Supervisor Dashboard](screenshots/supervisor-dashboard.png)
+
+---
+
+## 👷 Contractor Dashboard
+
+![Contractor Dashboard](screenshots/contractor-dashboard.png)
+
+---
+
+## 👤 Client Dashboard
+
+![Client Dashboard](screenshots/client-dashboard.png)
+
+---
+
+## 🏗️ Project Sites
+
+![Project Sites](screenshots/project-sites.png)
+
+---
+
+## 👥 User Management
+
+![Users](screenshots/admin-users.png)
+
+---
+
+## 📨 Inquiry Management
+
+![Inquiries](screenshots/admin-inquiries.png)
+
+---
+
+## 📋 My Inquiries
+
+![My Inquiries](screenshots/my-inquiries.png)
+
+---
+
+## 📊 Reports Dashboard
+
+![Reports](screenshots/reports.png)
+
+---
+
 # 🚀 Future Enhancements
 
-- Cloud Deployment (AWS/Azure)
 - Docker Containerization
+- Cloud Deployment (AWS/Azure)
 - CI/CD Pipeline
 - Email Notifications
-- Real-Time Chat
-- Analytics Dashboard
-- Mobile Application
 - File Upload Support
-- Project Reports (PDF/Excel)
+- Project Report Generation (PDF/Excel)
+- Mobile Application
+- Real-Time Chat
+- Push Notifications
 - AI-Based Project Progress Prediction
+- Analytics Dashboard
 
 ---
+
 # 👩‍💻 Developer
 
-**Shreenithi S**
+## Shreenithi S
 
-B.Tech Artificial Intelligence & Data Science
+**B.Tech – Artificial Intelligence & Data Science**
 
-Dr. Mahalingam College of Engineering and Technology
+**Dr. Mahalingam College of Engineering and Technology**
 
-Passionate about Backend Development, Full-Stack Web Development, Artificial Intelligence, and building real-world software solutions.
+Passionate about **Backend Development**, **Java Spring Boot**, **REST API Development**, **Full-Stack Web Development**, and building scalable real-world software solutions.
 
 ---
 
-⭐ If you found this project interesting, consider giving it a star on GitHub!
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are always welcome.
+
+If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Submit a Pull Request.
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+It motivates me to continue building and sharing more real-world projects.
+
+---
+
+## 📬 Connect with Me
+
+- GitHub: **github.com/shreenithisethubalu13**
+- LinkedIn: **www.linkedin.com/in/shreenithi-s**
